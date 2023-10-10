@@ -1,7 +1,11 @@
-import { component$ } from "@builder.io/qwik";
+import { component$, useStylesScoped$ } from "@builder.io/qwik"
+import ContactStyles from "./contact.css?inline"
 
 
 export default component$(() => {
+
+  useStylesScoped$(ContactStyles)
+
   return (
     
     <article>

@@ -14,6 +14,10 @@
   --qwik-dirty-black: #1d2033;
   --qwik-dark-background: #151934;
   --qwik-dark-text: #ffffff;
+
+  /* mes variables */
+  --theme-yellow: #f6cd25;
+  --theme-red: #dc163b;
 }
 
 html {
@@ -39,11 +43,6 @@ html {
     "Noto Color Emoji";
 }
 
-body {
-  padding: 0;
-  margin: 0;
-  line-height: inherit;
-}
 
 /**
  * WHAT IS THIS FILE?
@@ -75,6 +74,19 @@ html {
 }
 
 body {
+  font-family: "Poppins", sans-serif;
   padding: 0;
-  line-height: inherit;
+  margin: 0;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
+
+h1, h2, h3, h4 {
+  font-family: 'Geo';
+  font-weight: bold;
+  margin: 0;
+  font-size: 1.8em;
+}
+
+
