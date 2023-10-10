@@ -84,7 +84,7 @@ ul {
 }
 
 /* CONTAINER ------------------------------------ */
-.container {
+/* .container {
   margin: 0 auto;
   padding: 30px 40px;
 }
@@ -97,15 +97,16 @@ ul {
 }
 .container.container-center {
   text-align: center;
-}
-.container.container-flex {
-  /* does nothing on mobile */
+} */
+
+/* .container.container-flex {
+
 }
 .container.container-spacing-xl {
   padding: 50px 40px;
-}
+} */
 
-@media screen and (min-width: 768px) {
+/* @media screen and (min-width: 768px) {
   .container {
     padding: 50px 80px;
   }
@@ -117,7 +118,7 @@ ul {
     justify-content: center;
     gap: 60px;
   }
-}
+} */
 
 /* BUTTONS -------------------------------------- */
 a.button,
