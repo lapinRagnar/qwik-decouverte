@@ -10,6 +10,13 @@ export default component$(() => {
     name: "lapinRagnar",
     age: 55
   })
+  const blogs = useStore([
+    {id: 1, title: 'first blog'},
+    {id: 2, title: 'second blog'},
+    {id: 3, title: 'third blog'},
+
+
+  ])
 
   return (
     <>
@@ -20,6 +27,16 @@ export default component$(() => {
         <h4>Monsieur - { person.name } a { person.age } ans</h4>
         <button onClick$={() => name.value = "grochabe"}>changer le premier nom</button>
         <button onClick$={() => person.name = "grochabe"}>changer le deuxieme nom</button>
+     
+
+        <div>
+          {blogs.map(blog => (
+            <div key={blog.id}>{blog.title}</div>
+          ))}
+        <button onClick$={() => blogs.pop()}>Supprimer</button>
+        </div>
+
+
       </div>
     </>
   );
