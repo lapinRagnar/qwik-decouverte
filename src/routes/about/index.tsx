@@ -1,4 +1,4 @@
-import { component$, useSignal, useStyles$ } from '@builder.io/qwik'
+import { component$, useSignal, useStyles$, $ } from '@builder.io/qwik'
 import AboutStyles from './about.css?inline'
 import { Modal } from '~/components/modal/modal'
 
@@ -8,6 +8,12 @@ export default component$(() => {
   useStyles$(AboutStyles)
 
   const modalVisible = useSignal(false)
+
+  const closeModal = $(
+    () => {
+      modalVisible.value = false
+    }
+  )
 
   return (
     <>
@@ -23,6 +29,7 @@ export default component$(() => {
         <Modal
           size='lg'
           frosted={true}
+          close={closeModal}
           >
           <div q:slot='content'>
             <h2>Salut tout le monde - modal titre avec un slot nommé</h2>
