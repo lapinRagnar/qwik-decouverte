@@ -80,3 +80,14 @@ a faire
 https://github.com/lapinRagnar/qwik-decouverte/tree/main
 
 
+# les commandes git :
+- git branch
+- git branch 1-premiere-etape-jsqau-fetch-data
+- git branch afficher-blog-par-id
+- git checkout main
+- git checkout 1-premiere-etape-jsqau-fetch-data
+- git checkout 2-afficher-blog-par-id
+- git merge main
+- git push origin 1-premiere-etape-jsqau-fetch-data
+- git push origin 2-afficher-blog-par-id
+  
