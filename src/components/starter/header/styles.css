@@ -22,13 +22,13 @@ nav li {
   display: inline-block;
   margin-left: 10px;
 }
-nav a {
+nav ul li a {
   color: white;
   text-decoration: none;
   padding: 4px 8px;
   border-radius: 4px;
 }
 nav a:hover {
-  background-color: white;
+  background-color: rgb(108, 166, 117);
   color: #111;
 }

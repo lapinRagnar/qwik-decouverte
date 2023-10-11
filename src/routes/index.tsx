@@ -25,15 +25,19 @@ export default component$(() => {
         <h2>Bonjour - { name.value } </h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea repellat, veniam ut tempora labore aliquam dolor officiis enim quae? Culpa nam natus itaque velit ab deleniti perferendis quas voluptas adipisci.</p>
         <h4>Monsieur - { person.name } a { person.age } ans</h4>
-        <button onClick$={() => name.value = "grochabe"}>changer le premier nom</button>
-        <button onClick$={() => person.name = "grochabe"}>changer le deuxieme nom</button>
+        
+        <div class="mes_boutons">
+          <button class="bouton1" onClick$={() => name.value = "grochabe"}>changer le premier nom</button>
+          <button onClick$={() => person.name = "grochabe"}>changer le deuxieme nom</button>
+        </div>
      
 
-        <div>
+        <div class="blogs">
+          <h2>Blogs</h2>
           {blogs.map(blog => (
             <div key={blog.id}>{blog.title}</div>
           ))}
-        <button onClick$={() => blogs.pop()}>Supprimer</button>
+          <button onClick$={() => blogs.pop()}>Supprimer</button>
         </div>
 
 
