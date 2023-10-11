@@ -1,6 +1,6 @@
 import { Resource, component$,   } from "@builder.io/qwik";
 // import { routeLoader$, type DocumentHead, type RequestHandler  } from "@builder.io/qwik-city";
-import { routeLoader$, type DocumentHead  } from "@builder.io/qwik-city";
+import { routeLoader$, type DocumentHead, Link  } from "@builder.io/qwik-city";
 
 
 interface BlogDataInterface {
@@ -38,7 +38,10 @@ export default component$(() => {
                   blogs.map((blog, i) => (
                     <div key={i}>
                       <h1>{blog.title}</h1>
-                      <p>{blog.content.slice(0,30)}</p>
+                      <p class="content">{blog.content.slice(0,30)}</p>
+
+                      <Link class="bouton_lire" href={"/blog/" + blog.id }>Lire plus...</Link>
+
                     </div>
                   ))
                 }

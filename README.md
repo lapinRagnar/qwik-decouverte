@@ -76,4 +76,7 @@ a faire
 - pour lancer le server, la commande : json-server -w ./data/db.json
 - on obtient l'endpoint : http://localhost:3000/blogs, pour faire le fetch
 
+# mon repo git
+https://github.com/lapinRagnar/qwik-decouverte/tree/main
+
 
