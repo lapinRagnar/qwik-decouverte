@@ -70,6 +70,10 @@ https://www.youtube.com/playlist?list=PL4cUxeGkcC9gOUlY-uCHurFIpqogsdOnw
 a faire
 
 
-
+# base de donnée
+- il faut installer json-server globalement
+- les données sont dans le dossier data/db.json
+- pour lancer le server, la commande : json-server -w ./data/db.json
+- on obtient l'endpoint : http://localhost:3000/blogs, pour faire le fetch
 
 

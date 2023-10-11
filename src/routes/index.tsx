@@ -1,44 +1,51 @@
-import { component$, useSignal, useStore } from "@builder.io/qwik";
-import type { DocumentHead } from "@builder.io/qwik-city";
+import { Resource, component$,   } from "@builder.io/qwik";
+// import { routeLoader$, type DocumentHead, type RequestHandler  } from "@builder.io/qwik-city";
+import { routeLoader$, type DocumentHead  } from "@builder.io/qwik-city";
+
+
+interface BlogDataInterface {
+  id: string,
+  title: string,
+  content: string
+}
+
+export const useBlogData = routeLoader$(async () => {
+  const response = await fetch('http://localhost:3000/blogs', {
+    headers: { Accept: 'application/json' },
+  })
+  return (await response.json()) as BlogDataInterface[]
+})
 
 
 
 export default component$(() => {
 
-  const name = useSignal("lapinRagnar")
-  const person = useStore({
-    name: "lapinRagnar",
-    age: 55
-  })
-  const blogs = useStore([
-    {id: 1, title: 'first blog'},
-    {id: 2, title: 'second blog'},
-    {id: 3, title: 'third blog'},
-
-
-  ])
+  const blogsData = useBlogData()
 
   return (
     <>
       <div class="page-index">
-        <h1>Page index</h1>
-        <h2>Bonjour - { name.value } </h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea repellat, veniam ut tempora labore aliquam dolor officiis enim quae? Culpa nam natus itaque velit ab deleniti perferendis quas voluptas adipisci.</p>
-        <h4>Monsieur - { person.name } a { person.age } ans</h4>
-        
-        <div class="mes_boutons">
-          <button class="bouton1" onClick$={() => name.value = "grochabe"}>changer le premier nom</button>
-          <button onClick$={() => person.name = "grochabe"}>changer le deuxieme nom</button>
-        </div>
-     
 
-        <div class="blogs">
-          <h2>Blogs</h2>
-          {blogs.map(blog => (
-            <div key={blog.id}>{blog.title}</div>
-          ))}
-          <button onClick$={() => blogs.pop()}>Supprimer</button>
-        </div>
+        <h1>Utilisation de fetch - avec json-server </h1>
+
+        <Resource 
+          value={blogsData}
+          onPending={() => <>loading...</>}
+          onResolved= {
+            (blogs) => (
+              <div class="blogs">
+                { 
+                  blogs.map((blog, i) => (
+                    <div key={i}>
+                      <h1>{blog.title}</h1>
+                      <p>{blog.content.slice(0,30)}</p>
+                    </div>
+                  ))
+                }
+              </div>
+            )
+          }
+        />
 
 
       </div>
