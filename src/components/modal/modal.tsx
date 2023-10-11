@@ -1,13 +1,20 @@
-import { Slot, component$, useStylesScoped$ } from "@builder.io/qwik";
+import { Slot, component$, useStyles$ } from "@builder.io/qwik";
 import ModalStyles from "./modal.css?inline";
 
-export const Modal = component$(() => {
+interface ModalProps {
+  size: 'sm' | 'lg',
+  frosted ?: boolean
+}
 
-  useStylesScoped$(ModalStyles)
+export const Modal = component$((props: ModalProps) => {
+
+  useStyles$(ModalStyles)
+
+
 
   return (
-    <div class="modal">
-      <div class="modal-content">
+    <div class={`modal`} >
+      <div class={`modal-content ${props.size} ${props.frosted && 'frosted'}`}>
         <div class="close">Close</div>
         <main class="main-content">
           <Slot name="content" />

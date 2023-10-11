@@ -20,7 +20,10 @@ export default component$(() => {
         <button onClick$={() => modalVisible.value = !modalVisible.value}>Ouvrir le modal</button>
       
         {modalVisible.value && 
-        <Modal>
+        <Modal
+          size='lg'
+          frosted={true}
+          >
           <div q:slot='content'>
             <h2>Salut tout le monde - modal titre avec un slot nommé</h2>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos, nostrum. Fugiat laboriosam culpa doloremque consectetur dignissimos omnis, mollitia velit blanditiis laudantium recusandae distinctio officiis nulla cumque quae dolores iste labore.</p>

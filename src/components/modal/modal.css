@@ -11,9 +11,8 @@
   padding: 20px;
   border-radius: 8px;
   box-shadow: 3px 3px 5px rgba(0,0,0,0.1);
-  margin: 300px auto;
+  margin: 200px auto;
   position: relative;
-  max-width: 50%;
 }
 main, footer {
   background: transparent;
@@ -32,4 +31,25 @@ footer {
   font-size: 0.8em;
   border-radius: 4px;
   cursor: pointer;
+}
+
+/* variations  */
+
+.modal-content.lg {
+  max-width: 800px;
+}
+
+.modal-content.sm {
+  max-width: 400px;
+  background: red;
+}
+
+.modal-content.frosted {
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(5px);
+  border: 2px solid white;
+}
+
+.frosted .modal {
+  background-color: rgba(0, 0, 0, 0.2);
 }
