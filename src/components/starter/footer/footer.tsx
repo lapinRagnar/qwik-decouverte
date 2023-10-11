@@ -8,7 +8,7 @@ export default component$(() => {
   return (
     <footer>
       <div class="container">
-        <a href="https://www.builder.io/" target="_blank" class={styles.anchor}>
+        <a href="https://github.com/lapinRagnar/" target="_blank" class={styles.anchor}>
           <span>lapinRagnar 🐰</span>
           <span class={styles.spacer}>|</span>
           <span>{serverTime.value.date}</span>

@@ -29,8 +29,8 @@ export default component$(() => {
   return (
     <>
       <Header />
-      <h1>layout different</h1>
       <main class="container">
+        {/* <h1>layout different</h1> */}
         <Slot />
       </main>
       <Footer />
