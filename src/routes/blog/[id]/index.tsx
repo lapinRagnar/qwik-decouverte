@@ -10,17 +10,30 @@ interface BlogDataInterface {
   content: string
 }
 
-export const useBlogData = routeLoader$(async ({ params }) => {
+export const useBlogData = routeLoader$(async ({ params, status, redirect }) => {
+  
+  
   const response = await fetch('http://localhost:3000/blogs/' + params.id, {
     headers: { Accept: 'application/json' },
   })
+  
+
+  if (!response.ok) {
+    console.log('response pas ok')
+    status(404)
+    throw redirect(302, '/')
+    
+  }
+
   return (await response.json()) as BlogDataInterface
+
 })
 
 export default component$(() => {
 
-  const blogData = useBlogData()
   useStyles$(blogStyles)
+    
+  const blogData = useBlogData()
 
   return (
     <div class="blog">
